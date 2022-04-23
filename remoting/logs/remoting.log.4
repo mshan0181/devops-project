@@ -1,0 +1,39 @@
+Apr 19, 2022 3:23:24 PM hudson.slaves.ChannelPinger$1 onDead
+INFO: Ping failed. Terminating the channel channel.
+java.util.concurrent.TimeoutException: Ping started at 1650368750805 hasn't completed by 1650381804484
+	at hudson.remoting.PingThread.ping(PingThread.java:132)
+	at hudson.remoting.PingThread.run(PingThread.java:88)
+
+Apr 19, 2022 3:27:24 PM hudson.slaves.ChannelPinger$1 onDead
+INFO: Ping failed. Terminating the channel channel.
+java.util.concurrent.TimeoutException: Ping started at 1650381804495 hasn't completed by 1650382044495
+	at hudson.remoting.PingThread.ping(PingThread.java:132)
+	at hudson.remoting.PingThread.run(PingThread.java:88)
+
+Apr 19, 2022 3:32:24 PM hudson.slaves.ChannelPinger$1 onDead
+INFO: Ping failed. Terminating the channel channel.
+java.util.concurrent.TimeoutException: Ping started at 1650382104492 hasn't completed by 1650382344498
+	at hudson.remoting.PingThread.ping(PingThread.java:132)
+	at hudson.remoting.PingThread.run(PingThread.java:88)
+
+Apr 19, 2022 3:37:24 PM hudson.slaves.ChannelPinger$1 onDead
+INFO: Ping failed. Terminating the channel channel.
+java.util.concurrent.TimeoutException: Ping started at 1650382404502 hasn't completed by 1650382644502
+	at hudson.remoting.PingThread.ping(PingThread.java:132)
+	at hudson.remoting.PingThread.run(PingThread.java:88)
+
+Apr 19, 2022 3:39:16 PM hudson.remoting.SynchronousCommandTransport$ReaderThread run
+INFO: I/O error in channel channel
+java.io.IOException: Unexpected termination of the channel
+	at hudson.remoting.SynchronousCommandTransport$ReaderThread.run(SynchronousCommandTransport.java:75)
+Caused by: java.io.EOFException
+	at java.io.ObjectInputStream$PeekInputStream.readFully(ObjectInputStream.java:2831)
+	at java.io.ObjectInputStream$BlockDataInputStream.readShort(ObjectInputStream.java:3306)
+	at java.io.ObjectInputStream.readStreamHeader(ObjectInputStream.java:933)
+	at java.io.ObjectInputStream.<init>(ObjectInputStream.java:395)
+	at hudson.remoting.ObjectInputStreamEx.<init>(ObjectInputStreamEx.java:49)
+	at hudson.remoting.Command.readFrom(Command.java:142)
+	at hudson.remoting.Command.readFrom(Command.java:128)
+	at hudson.remoting.AbstractSynchronousByteArrayCommandTransport.read(AbstractSynchronousByteArrayCommandTransport.java:35)
+	at hudson.remoting.SynchronousCommandTransport$ReaderThread.run(SynchronousCommandTransport.java:61)
+

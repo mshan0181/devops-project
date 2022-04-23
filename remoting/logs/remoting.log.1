@@ -1,0 +1,37 @@
+Apr 22, 2022 7:28:54 AM hudson.slaves.ChannelPinger$1 onDead
+INFO: Ping failed. Terminating the channel channel.
+java.util.concurrent.TimeoutException: Ping started at 1650610400365 hasn't completed by 1650612534746
+	at hudson.remoting.PingThread.ping(PingThread.java:132)
+	at hudson.remoting.PingThread.run(PingThread.java:88)
+
+Apr 22, 2022 7:28:54 AM hudson.remoting.SynchronousCommandTransport$ReaderThread run
+INFO: I/O error in channel channel
+java.io.IOException: Unexpected termination of the channel
+	at hudson.remoting.SynchronousCommandTransport$ReaderThread.run(SynchronousCommandTransport.java:75)
+Caused by: java.io.EOFException
+	at java.io.ObjectInputStream$PeekInputStream.readFully(ObjectInputStream.java:2831)
+	at java.io.ObjectInputStream$BlockDataInputStream.readShort(ObjectInputStream.java:3306)
+	at java.io.ObjectInputStream.readStreamHeader(ObjectInputStream.java:933)
+	at java.io.ObjectInputStream.<init>(ObjectInputStream.java:395)
+	at hudson.remoting.ObjectInputStreamEx.<init>(ObjectInputStreamEx.java:49)
+	at hudson.remoting.Command.readFrom(Command.java:142)
+	at hudson.remoting.Command.readFrom(Command.java:128)
+	at hudson.remoting.AbstractSynchronousByteArrayCommandTransport.read(AbstractSynchronousByteArrayCommandTransport.java:35)
+	at hudson.remoting.SynchronousCommandTransport$ReaderThread.run(SynchronousCommandTransport.java:61)
+
+Apr 22, 2022 7:28:54 AM hudson.slaves.ChannelPinger$1 onDead
+INFO: Ping failed. Terminating the channel channel.
+java.io.IOException: Broken pipe
+	at java.io.FileOutputStream.writeBytes(Native Method)
+	at java.io.FileOutputStream.write(FileOutputStream.java:313)
+	at hudson.remoting.StandardOutputStream.write(StandardOutputStream.java:85)
+	at hudson.remoting.ChunkedOutputStream.sendFrame(ChunkedOutputStream.java:93)
+	at hudson.remoting.ChunkedOutputStream.sendBreak(ChunkedOutputStream.java:66)
+	at hudson.remoting.ChunkedCommandTransport.writeBlock(ChunkedCommandTransport.java:46)
+	at hudson.remoting.AbstractSynchronousByteArrayCommandTransport.write(AbstractSynchronousByteArrayCommandTransport.java:46)
+	at hudson.remoting.Channel.send(Channel.java:765)
+	at hudson.remoting.Request.callAsync(Request.java:238)
+	at hudson.remoting.Channel.callAsync(Channel.java:1029)
+	at hudson.remoting.PingThread.ping(PingThread.java:108)
+	at hudson.remoting.PingThread.run(PingThread.java:88)
+
